@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://xmlns.jcp.org/jsf/html">  
+    <h:head>  
+        <title>User Form</title>  
+        <h:outputStylesheet name="css/bootstrap.css"  />
+        <style>
+            #main{
+                background-color: black;
+                color: maroon;
+                margin: 5em
+            }
+            #center{
+                border:10px solid DodgerBlue;
+            }
+        </style>
+    </h:head>  
+    <h:body id="main">  
+        <h:form>  
+            <div   id="center" class="container badge-dark">
+                <h1 align="center"><span class="badge badge-dark mt-3 mb-3">HESAP MAKİNESİ</span></h1>
+                <h3 align="left"><span class="badge mt-3 mb-3">#{calculator.info}</span></h3>
+                <div  class="input-group input-group-lg">
+                    <h:inputText value="#{calculator.first}" styleClass="form-control mr-4 ml-4" />  
+                    <h:inputText value="#{calculator.second}" styleClass="form-control mb-3 mr-4 ml-4" />  
+                    <div class="input-group-append" id="button-addon4">
+                        <h:commandButton styleClass="btn btn-primary btn-lg mb-3" value="+" action="#{calculator.add()}"/>
+                        <h:commandButton styleClass="btn btn-success btn-lg mb-3" value="-" action="#{calculator.substract()}"/>  
+                        <h:commandButton styleClass="btn btn-danger btn-lg mb-3" value="*" action="#{calculator.multiply()}"/>  
+                        <h:commandButton styleClass="btn btn-warning btn-lg mb-3 mr-4" value="/" action="#{calculator.division()}"/>  
+                    </div>
+                </div>
+                <h2 align="center"><span class="badge mt-5 mb-5">Sonuç = #{calculator.output}</span></h2>
+            </div>
+        </h:form>  
+    </h:body>  
+</html>      
